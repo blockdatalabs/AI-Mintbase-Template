@@ -1,2 +1,3 @@
-# AI-Mintbase-Template
-Create characters, mint them, join the NEAR community
+# Ancestors AI Template
+
+Change the file name of: .env.example to .env 
