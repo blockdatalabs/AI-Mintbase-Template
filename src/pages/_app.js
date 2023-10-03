@@ -19,7 +19,6 @@ function App() {
         <title>{constants.metaTitle}</title>
         <meta name="description" content={constants.metaDescription}/>
         <meta property="og:image" content={Logo} />    
-        <link rel="manifest" href="./manifest.json" />
       </Head>
       <WalletContextProvider
         contractAddress={constants.contractAddress}
