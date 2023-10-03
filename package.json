@@ -7,9 +7,9 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
-    "@mintbase-js/react": "^0.4.1-beta.5",
-    "@mintbase-js/sdk": "^0.4.1-beta.5",
-    "@mintbase-js/storage": "^0.4.1-beta.5",
+    "@mintbase-js/react": "^0.4.1-feat-add-wallet-package-4fa7700.0.0",
+    "@mintbase-js/sdk": "^0.4.1-feat-add-wallet-package-4fa7700.0.0",
+    "@mintbase-js/storage": "^0.4.1-feat-add-wallet-package-4fa7700.0.0",
     "bootstrap": "^5.3.1",
     "browserify-zlib": "^0.2.0",
     "dotenv": "^16.3.1",
