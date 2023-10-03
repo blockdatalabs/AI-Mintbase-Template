@@ -93,12 +93,12 @@ function Characters() {
                       <div className="row" key={index}>
                         {leoImage.generated_images.map((leoGenerate, idx) => (
                           <>
-                            <div className="col-md-4" key={idx}>
+                            <div className="col-md-12" key={idx}>
                               <h2>Gen {idx + 1}</h2>
                               <Image
                                 src={leoGenerate?.url}
                                 style={{
-                                  width: "75%",
+                                  width: "95%",
                                   borderRadius: 40,
                                 }}
                                 alt="generations"
