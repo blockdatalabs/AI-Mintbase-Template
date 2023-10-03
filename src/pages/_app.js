@@ -6,11 +6,9 @@ import Banner from "@/components/banner/Banner";
 import Logo from "../assets/images/logo/logo-header.png"
 import Header from "@/components/header/Header";
 import { constants } from "@/utils/constants";
-import Head from "next/head";
 function App() {
   return (
     <>
-      <Head>
         <meta charset="utf-8" />
         <link rel="icon" href={Logo} sizes="256x256" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +17,6 @@ function App() {
         <title>{constants.metaTitle}</title>
         <meta name="description" content={constants.metaDescription}/>
         <meta property="og:image" content={Logo} />    
-      </Head>
       <WalletContextProvider
         contractAddress={constants.contractAddress}
         network={constants.network}
