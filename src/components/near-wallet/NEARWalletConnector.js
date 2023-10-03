@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useWallet } from  '@mintbase-js/react'
 import { uploadReference } from "@mintbase-js/storage";
 import { execute, mint } from '@mintbase-js/sdk';
@@ -14,6 +14,7 @@ function NEARWalletConnector() {
     errorMessage,
   } = useWallet();
   const [file, setFile] = useState(null);
+  const [fileName, setFileName] = useState(null);
   const [image, setImage] = useState(null);
   const [fileReference, setFileReference] = useState(null);
   const handleMint = async () => {
@@ -34,7 +35,7 @@ function NEARWalletConnector() {
     if (!file) return;
     //call storage method to upload file to arweave
     const metadata = {
-    title: constants.appName + " " + e.target.files[0],
+    title: constants.appName + " " + fileName,
     media: file
   }
     const uploadResult = await uploadReference(metadata);
@@ -43,8 +44,9 @@ function NEARWalletConnector() {
   };
   const handleChange = (e) => {
     setFile(e.target.files[0]);
+    setFileName(e.target.files[0].name);
   };
-  return isConnected ? (
+  return !isConnected ? (
   <section className="banner">
     <div className="container big">
         <button className="btn btn-primary" style={{width: 500, padding: 25, marginRight: 20, borderRadius: 20}}  onClick={connect}>Connect to NEAR and Mint</button>
@@ -58,9 +60,9 @@ function NEARWalletConnector() {
   </div>
   <div>
 <form onSubmit={handleSubmitFile}>
-  <input style={{color: "blue", width: 500, padding: 25, marginTop: 20, marginLeft: 25, borderRadius: 20}} onClick={handleMint} type="file" onChange={handleChange} />
+  <input style={{color: "blue", width: 500, padding: 25, marginTop: 20, marginLeft: 25, borderRadius: 20}} type="file" onChange={handleChange} />
   <button
-  style={{color: "blue", width: 500, padding: 25, marginTop: 20, marginLeft: 25, borderRadius: 20}} onClick={handleMint}
+  style={{color: "blue", width: 500, padding: 25, marginTop: 20, marginLeft: 25, borderRadius: 20}}
     type="submit"
   >
     Upload
