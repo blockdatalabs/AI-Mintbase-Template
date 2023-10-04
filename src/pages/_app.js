@@ -6,6 +6,8 @@ import Banner from "@/components/banner/Banner";
 import Logo from "../assets/images/logo/logo-header.png"
 import Header from "@/components/header/Header";
 import { constants } from "@/utils/constants";
+import { setupAuthWallet } from "@mintbase-js/wallet";
+
 function App() {
   return (
     <>
@@ -20,6 +22,15 @@ function App() {
       <WalletContextProvider
         contractAddress={constants.contractAddress}
         network={constants.network}
+        additionalWallets={[
+          //@ts-ignore
+          setupAuthWallet({
+            networkId: constants.network,
+            relayerUrl: "/api/relay",
+            signInContractId: constants.contractAddress,
+            walletUrl: constants.mintbaseWalletUrl,
+          }),
+        ]}
       > 
       <Header />
         <div className="home-3 wrapper">

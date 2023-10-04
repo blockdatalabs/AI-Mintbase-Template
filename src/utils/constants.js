@@ -9,6 +9,7 @@ const promptSample = process.env.NEXT_PUBLIC_APP_TITLE_PROMPT;
 const apiFetchUrl = process.env.NEXT_PUBLIC_APP_API_FETCH;
 const metaTitle = process.env.NEXT_PUBLIC_META_TITLE
 const metaDescription = process.env.NEXT_PUBLIC_META_DESCRIPTION
+const mintbaseWalletUrl = process.env.NEXT_PUBLIC_MINTBASE_WALLET_ADDRESS
 export const constants = {
   appName,
   network,
@@ -19,4 +20,5 @@ export const constants = {
   apiFetchUrl,
   metaTitle,
   metaDescription,
+  mintbaseWalletUrl,
 };
